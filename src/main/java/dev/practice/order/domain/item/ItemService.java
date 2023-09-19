@@ -5,5 +5,5 @@ public interface ItemService {
     void changePrepare(String itemToken);
     void changeOnSales(String itemToken);
     void endOfSales(String itemToken);
-    ItemInfo.Main retriveItemInfo(String itemToken);
+    ItemInfo.Main retrieveItemInfo(String itemToken);
 }

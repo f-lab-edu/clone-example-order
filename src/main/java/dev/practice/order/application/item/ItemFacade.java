@@ -33,7 +33,7 @@ public class ItemFacade {
         itemService.endOfSales(itemToken);
     }
 
-    public ItemInfo.Main retriveItemInfo(String itemToken) {
-        return itemService.retriveItemInfo(itemToken);
+    public ItemInfo.Main retrieveItemInfo(String itemToken) {
+        return itemService.retrieveItemInfo(itemToken);
     }
 }

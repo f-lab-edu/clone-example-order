@@ -51,7 +51,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     @Transactional(readOnly = true)
-    public ItemInfo.Main retriveItemInfo(String itemToken) {
+    public ItemInfo.Main retrieveItemInfo(String itemToken) {
         var item = itemReader.getItemBy(itemToken);
         var itemOptionGroupInfoList = itemReader.getItemOptionSeries(item);
         return new ItemInfo.Main(item, itemOptionGroupInfoList);
