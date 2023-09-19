@@ -1,10 +1,10 @@
 package dev.practice.order.interfaces.partner;
 
 import dev.practice.order.domain.partner.Partner;
+import dev.practice.order.domain.partner.PartnerCommand;
 import dev.practice.order.domain.partner.PartnerInfo;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -24,10 +24,17 @@ public class PartnerDto {
         @Email(message = "email 형식에 맞아야 합니다.")
         @NotEmpty(message = "email은 필수값입니다.")
         private String businessNo;
+
+        public PartnerCommand toCommand() {
+            return PartnerCommand.builder()
+                    .partnerName(partnerName)
+                    .businessNo(businessNo)
+                    .email(email)
+                    .build();
+        }
     }
 
     @Getter
-    @Builder
     @ToString
     public static class RegisterResponse {
         private final String partnerToken;
