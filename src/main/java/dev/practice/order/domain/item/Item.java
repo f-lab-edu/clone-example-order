@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
+@Getter
 @Entity
 @NoArgsConstructor
 @Table(name = "items")
