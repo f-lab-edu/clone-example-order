@@ -1,0 +1,19 @@
+package dev.practice.order.infrastructure.item;
+
+import dev.practice.order.domain.item.ItemOption;
+import dev.practice.order.domain.item.ItemOptionStore;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+
+@Slf4j
+@Component
+@RequiredArgsConstructor
+public class ItemOptionStoreImpl implements ItemOptionStore {
+    private final ItemOptionRepository itemOptionRepository;
+
+    @Override
+    public void store(ItemOption itemOption) {
+        itemOptionRepository.save(itemOption);
+    }
+}
